@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791446692700,
+      "tag": "0000_fresh_gambit",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791447141899,
+      "tag": "0001_lowly_the_order",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791447272170,
+      "tag": "0002_blue_madame_web",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+.page {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #666;
+}
+
+.form {
+  margin-top: 24px;
+}
+
+.field {
+  margin-top: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #111;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  color: #111;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.statusCard {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.statusRow {
+  margin: 8px 0;
+}
+
+.error {
+  margin-top: 16px;
+  color: #c00;
+}
