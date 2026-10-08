@@ -92,76 +92,103 @@ export default function StaffPage() {
 
   return (
     <main className={styles.page}>
-      <h1 className={styles.title}>
-        Staff Waitlist
-      </h1>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <div>
+            <span className={styles.eyebrow}>
+              RESTAURANT WAITLIST
+            </span>
 
-      <p className={styles.subtitle}>
-        Manage the current waiting parties.
-      </p>
+            <h1 className={styles.title}>
+              Staff Queue
+            </h1>
 
-      {error && (
-        <p className={styles.error}>
-          {error}
-        </p>
-      )}
+            <p className={styles.subtitle}>
+              Manage the parties currently waiting.
+            </p>
+          </div>
 
-      <button
-        type="button"
-        onClick={loadWaitlist}
-        disabled={loading}
-        className={styles.refreshButton}
-      >
-        {loading ? "Loading..." : "Refresh queue"}
-      </button>
+          <button
+            type="button"
+            onClick={loadWaitlist}
+            disabled={loading}
+            className={styles.refreshButton}
+          >
+            {loading ? "Loading..." : "Refresh queue"}
+          </button>
+        </header>
 
-      {!loading && parties.length === 0 && !error && (
-        <p className={styles.empty}>
-          No parties are currently waiting.
-        </p>
-      )}
+        {error && (
+          <p className={styles.error}>
+            {error}
+          </p>
+        )}
 
-      {parties.length > 0 && (
-        <section className={styles.queue}>
-          {parties.map((party) => (
-            <article
-              key={party.ticketNumber}
-              className={styles.card}
-            >
-              <div>
-                <p className={styles.ticket}>
-                  Ticket #{party.ticketNumber}
-                </p>
+        {!loading && parties.length === 0 && !error && (
+          <div className={styles.empty}>
+            <strong>No parties waiting</strong>
+            <span>
+              The waitlist is currently empty.
+            </span>
+          </div>
+        )}
 
-                <p className={styles.name}>
-                  {party.name}
-                </p>
+        {parties.length > 0 && (
+          <section className={styles.queue}>
+            <div className={styles.queueHeader}>
+              <span>WAITING PARTIES</span>
+              <strong>{parties.length}</strong>
+            </div>
 
-                <p className={styles.partySize}>
-                  Party size: {party.partySize}
-                </p>
-
-                <p className={styles.createdAt}>
-                  Joined:{" "}
-                  {new Date(
-                    party.createdAt
-                  ).toLocaleString()}
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={() =>
-                  handleRemove(party.ticketNumber)
-                }
-                className={styles.removeButton}
+            {parties.map((party, index) => (
+              <article
+                key={party.ticketNumber}
+                className={styles.card}
               >
-                Remove
-              </button>
-            </article>
-          ))}
-        </section>
-      )}
+                <div className={styles.position}>
+                  <span>#{index + 1}</span>
+                </div>
+
+                <div className={styles.info}>
+                  <div className={styles.topLine}>
+                    <span className={styles.ticket}>
+                      Ticket #{party.ticketNumber}
+                    </span>
+
+                    <span className={styles.partySize}>
+                      {party.partySize}{" "}
+                      {party.partySize === 1
+                        ? "person"
+                        : "people"}
+                    </span>
+                  </div>
+
+                  <h2 className={styles.name}>
+                    {party.name}
+                  </h2>
+
+                  <p className={styles.createdAt}>
+                    Joined{" "}
+                    {new Date(
+                      party.createdAt
+                    ).toLocaleString()}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleRemove(party.ticketNumber)
+                  }
+                  className={styles.removeButton}
+                >
+                  Remove
+                </button>
+              </article>
+            ))}
+          </section>
+        )}
+      </div>
     </main>
   );
 }

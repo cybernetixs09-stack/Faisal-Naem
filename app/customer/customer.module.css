@@ -1,52 +1,219 @@
 .page {
-  max-width: 500px;
-  margin: 80px auto;
-  padding: 24px;
+  width: 100%;
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  background: #f5f6f8;
 }
 
+/* ================================
+   TITLE & SUBTITLE
+================================ */
+
 .title {
+  width: 100%;
+  max-width: 500px;
+
   margin: 0;
+
+  color: #111827;
+
   font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
+  text-align: center;
 }
 
 .subtitle {
-  margin-top: 8px;
-  color: #666;
+  width: 100%;
+  max-width: 500px;
+
+  margin: 8px 0 24px;
+
+  color: #6b7280;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  text-align: center;
 }
+
+.subtitle strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* ================================
+   FORM & CARD CONTAINERS
+================================ */
 
 .form {
-  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 480px;
+
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  text-align: left;
 }
 
+.statusCard {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 480px;
+
+  margin: 0 auto 16px;
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.statusRow {
+  width: 100%;
+
+  margin: 0;
+  padding: 14px 0;
+
+  color: #374151;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  text-align: center;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.statusRow:first-child {
+  padding-top: 0;
+}
+
+.statusRow:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.statusRow strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* ================================
+   FORM FIELDS
+================================ */
+
 .field {
-  margin-top: 16px;
+  width: 100%;
+  margin: 0 0 16px;
 }
 
 .label {
   display: block;
-  margin-bottom: 6px;
+
+  width: 100%;
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 14px;
   font-weight: 600;
 }
 
 .input {
   display: block;
+
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  height: 48px;
+
+  margin: 0;
+  padding: 0 14px;
+
   box-sizing: border-box;
+
+  background: #ffffff;
+  color: #111827;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  outline: none;
+  appearance: none;
 }
 
+.input:focus {
+  border-color: #111827;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
 .button {
-  margin-top: 20px;
-  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 480px;
+  height: 48px;
+
+  margin: 8px 0 0;
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
   border: 0;
-  border-radius: 6px;
-  background: #111;
-  color: white;
+  border-radius: 8px;
+
+  background: #111827;
+  color: #ffffff;
+
   font-size: 15px;
+  font-weight: 600;
+
+  text-align: center;
+
   cursor: pointer;
+  appearance: none;
+}
+
+.button:hover:not(:disabled) {
+  background: #000000;
 }
 
 .button:disabled {
@@ -55,28 +222,87 @@
 }
 
 .secondaryButton {
-  margin-top: 12px;
-  padding: 10px 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: white;
-  color: #111;
-  font-size: 15px;
-  cursor: pointer;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.statusCard {
-  margin-top: 24px;
-  padding: 24px;
-  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 480px;
+  height: 44px;
+
+  margin: 10px 0 0;
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d1d5db;
   border-radius: 8px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-align: center;
+
+  cursor: pointer;
+  appearance: none;
 }
 
-.statusRow {
-  margin: 8px 0;
+.secondaryButton:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
 }
+
+/* ================================
+   ERROR
+================================ */
 
 .error {
-  margin-top: 16px;
-  color: #c00;
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+
+  margin: 12px auto;
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background: #fef2f2;
+  color: #b91c1c;
+
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* ================================
+   MOBILE RESPONSIVENESS
+================================ */
+
+@media (max-width: 500px) {
+  .page {
+    padding: 24px 16px;
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form,
+  .statusCard {
+    padding: 18px 16px;
+  }
 }
